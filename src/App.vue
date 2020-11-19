@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
-      <el-footer>Footer</el-footer>
-    </el-container>
+    <MainTarBar></MainTarBar>
   </div>
 </template>
 
 <script>
+import MainTarBar from "./components/content/maintarbar/MainTarBar";
 export default {
   name: 'App',
   components:{
-
+    MainTarBar
   }
 }
 </script>
