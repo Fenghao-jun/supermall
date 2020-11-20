@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 懒加载
-const Home = () => import('../pages/home/Home')
+import Home from "../pages/home/Home";
 const Category = () => import('../pages/category/Category')
 const Cart = () => import('../pages/cart/Cart')
 const Me = () => import('../pages/me/Me')
+
 Vue.use(Router)
 
 export default new Router({
