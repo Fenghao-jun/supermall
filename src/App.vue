@@ -11,7 +11,16 @@ export default {
   name: 'App',
   components:{
     MainTarBar
-  }
+  },
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+
+  },
+
 }
 </script>
 
