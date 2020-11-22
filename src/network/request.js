@@ -1,6 +1,6 @@
 import axios from 'axios'
 //创建axios实例
-const server = axios.create({
+const service = axios.create({
     baseURL:'',
     timeout:10000
 })
@@ -26,13 +26,13 @@ export default {
     /**
      * 方法ID:requestGet
      * 方法功能:Get请求方法封装
-     * 参数说明:(string) url 请求的地址  (object)data 请求的参数 
+     * 参数说明:(string) url 请求的地址  (object)data 请求的参数
      * 返回值说明:
      * 内部处理说明：
      * 做成日期： 2020/11/21       做成者：xiaofeng
      */
     requestGet(param={url:'',data:{},bodydata:{}}){
-        return server({
+        return service({
             url:param.rul+'?'+JSON.stringify(param.data),
             method:'get',
             data:param.bodydata,
@@ -49,7 +49,7 @@ export default {
      * 做成日期： 2020/11/22       做成者：xiaofeng
      */
     requestPost(param = {url:'', data:{}, bodydata:{} , method:'post'}){
-        return server({
+        return service({
             url: param.url,
             data:param.bodydata,
             method:param.method,
