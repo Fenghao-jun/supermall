@@ -1,8 +1,9 @@
 <template>
   <div class="home-recommend">
-    <div class="home-recommend-item" v-for="item in filterT4(cproducts)" :key="item.url">
-      <a :href="item.url">
+    <div class="home-recommend-item" v-for="item in recommends" :key="item.sort">
+      <a :href="item.link">
         <img :src="item.image" alt="">
+        <div>{{item.title}}</div>
       </a>
     </div>
   </div>
@@ -14,18 +15,13 @@
     export default {
         name: "HomeRecommend",
         props:{
-            cproducts:{
+            recommends:{
                 type:Array,
                 default() {
                     return []
                 }
             }
         },
-        methods:{
-            filterT4() {
-                return this.cproducts.slice(0,4)
-            }
-        }
     }
 </script>
 

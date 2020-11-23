@@ -1,7 +1,7 @@
 import axios from 'axios'
 //创建axios实例
 const service = axios.create({
-    baseURL:'',
+    baseURL:'http://152.136.185.210:8000/api/w6',
     timeout:10000
 })
 
@@ -33,7 +33,7 @@ export default {
      */
     requestGet(param={url:'',data:{},bodydata:{}}){
         return service({
-            url:param.rul+'?'+JSON.stringify(param.data),
+            url:param.url,
             method:'get',
             data:param.bodydata,
 
