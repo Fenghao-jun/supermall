@@ -9,6 +9,7 @@
     <home-recommend :recommends="recommends"/>
     <HomeFeatureView></HomeFeatureView>
     <tab-control class="tab-control" :titles="['流行','新款','精选']" />
+    <goods-list :goods="goods['pop'].list"/>
     <ul>
       <li>1</li>
       <li>2</li>
@@ -121,6 +122,7 @@ import HomeFeatureView from "./childComps/HomeFeatureView";
 
 import NavBar from "../../components/common/navbar/NavBar";
 import TabControl from "../../components/content/TabControl/TabControl";
+import GoodsList from "../../components/content/goods/GoodsList";
 
 export default {
   name: "Home",
@@ -130,6 +132,7 @@ export default {
     HomeFeatureView,
     TabControl,
     NavBar,
+    GoodsList,
   },
   created() {
     this.getData()
