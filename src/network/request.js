@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'qs'
 //创建axios实例
 const service = axios.create({
     baseURL:'http://152.136.185.210:8000/api/w6',
@@ -33,7 +34,7 @@ export default {
      */
     requestGet(param={url:'',data:{},bodydata:{}}){
         return service({
-            url:param.url,
+            url:param.url+'?'+qs.stringify(param.data),
             method:'get',
             data:param.bodydata,
 
