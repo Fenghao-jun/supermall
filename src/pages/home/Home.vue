@@ -8,8 +8,8 @@
     <home-swiper :banners="banners"/>
     <home-recommend :recommends="recommends"/>
     <HomeFeatureView></HomeFeatureView>
-    <tab-control class="tab-control" :titles="['流行','新款','精选']" />
-    <goods-list :goods="goods['pop'].list"/>
+    <tab-control class="tab-control" :titles="['流行','新款','精选']" @itemClick="getIndex"/>
+    <goods-list :goods="goods[this.show].list"/>
     <ul>
       <li>1</li>
       <li>2</li>
@@ -139,7 +139,6 @@ export default {
     this.getGoods('pop')
     this.getGoods('new')
     this.getGoods('sell')
-    console.log(this.goods)
   },
   data(){
     return{
@@ -150,6 +149,7 @@ export default {
         'new':{page:0,list:[]},
         'sell':{page:0,list:[]},
       },
+      show:'pop'
     }
   },
   methods: {
@@ -177,6 +177,20 @@ export default {
         this.goods[type].list.push(...result.data.data.list)
         this.goods[type].page+=1
       })
+    },
+    //获取TabControl index
+    getIndex(num){
+      switch (num) {
+        case 0:
+          this.show='pop';
+              break;
+        case 1:
+          this.show='new';
+              break;
+        case 2:
+          this.show='sell';
+              break;
+      }
     }
   },
 

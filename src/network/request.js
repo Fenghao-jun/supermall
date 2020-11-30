@@ -37,7 +37,6 @@ export default {
             url:param.url+'?'+qs.stringify(param.data),
             method:'get',
             data:param.bodydata,
-
         })
     },
 
